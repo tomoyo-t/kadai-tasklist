@@ -11,13 +11,15 @@
         <thead>
             <tr>
                 <th>id</th>
-                <th>タスク</th>
+                <th>Status</th>
+                <th>Task</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($tasks as $tasks)
             <tr>
                 <td>{!! link_to_route('tasks.show', $tasks->id, ['task' => $tasks->id]) !!}</td>
+                <td>{{ $tasks->status }}</td>
                 <td>{{ $tasks->content }}</td>
             </tr>
             @endforeach
